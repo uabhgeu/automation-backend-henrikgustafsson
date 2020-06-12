@@ -1,0 +1,138 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-06-06T10:51:34.050Z",
+    "end": "2020-06-06T10:51:35.386Z",
+    "duration": 1336,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ee407aa4-8b6d-4294-99f8-465d5cfe2ae5",
+      "title": "",
+      "fullFile": "cypress/integration/backend-auth.spec.js",
+      "file": "cypress/integration/backend-auth.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b93cd1fa-aa71-45eb-b5ec-22cde64ae6b2",
+          "title": "testing auth",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "test case 1",
+              "fullTitle": "testing auth test case 1",
+              "timedOut": null,
+              "duration": 651,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.authenticateSession().then(function (response) {\n  cy.request({\n    method: \"GET\",\n    url: 'http://localhost:3000/api/clients',\n    headers: {\n      'X-User-Auth': JSON.stringify(Cypress.env().loginToken),\n      'Content-Type': 'application/json'\n    }\n  }).then(function (response) {\n    cy.log(response.body[0].id);\n    cy.log(response.body[0].created);\n    cy.log(response.body[0].name);\n    cy.log(response.body[0].email);\n    cy.log(response.body[0].telephone);\n  });\n});",
+              "err": {},
+              "uuid": "15c1d9ff-7d54-4e60-b92e-c3a111d013b7",
+              "parentUUID": "b93cd1fa-aa71-45eb-b5ec-22cde64ae6b2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Create a new client",
+              "fullTitle": "testing auth Create a new client",
+              "timedOut": null,
+              "duration": 595,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "clientHelpers.createClient(cy);",
+              "err": {},
+              "uuid": "69eaee63-381f-41fe-8789-88f0f386a7d5",
+              "parentUUID": "b93cd1fa-aa71-45eb-b5ec-22cde64ae6b2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get clients",
+              "fullTitle": "testing auth Get clients",
+              "timedOut": null,
+              "duration": 55,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "clientHelpers.getClients(cy);",
+              "err": {},
+              "uuid": "9e298af4-8a99-4776-8182-08ce50d84b11",
+              "parentUUID": "b93cd1fa-aa71-45eb-b5ec-22cde64ae6b2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "15c1d9ff-7d54-4e60-b92e-c3a111d013b7",
+            "69eaee63-381f-41fe-8789-88f0f386a7d5",
+            "9e298af4-8a99-4776-8182-08ce50d84b11"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1301,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {},
+      "version": "5.1.0"
+    }
+  }
+}
